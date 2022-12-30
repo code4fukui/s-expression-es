@@ -17,12 +17,13 @@ Supports `quote`, `quasiquote`, `unquote`, and `unquote-splicing`, with `'`, `` 
 
 ### Example
 
-    var parse = require('s-expression');
+```JavaScript
+import { SParse as parse } from "https://code4fukui.github.io/s-expression-es/index.js";
 
-    console.log(parse('a')); // 'a'
-    console.log(parse('(a b "c")')); // ['a', 'b', [String: 'c']]
-    console.log(parse("'(a `(b ,c))")); // ['quote', ['a', ['quasiquote', ['b', ['unquote', 'c']]]]]
-
+console.log(parse('a')); // 'a'
+console.log(parse('(a b "c")')); // ['a', 'b', [String: 'c']]
+console.log(parse("'(a `(b ,c))")); // ['quote', ['a', ['quasiquote', ['b', ['unquote', 'c']]]]]
+```
 
 ### Errors
 
