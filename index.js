@@ -1,5 +1,3 @@
-'use strict';
-
 function SParser(stream) {
     this._line = this._col = this._pos = 0;
     this._stream = stream;
@@ -28,7 +26,7 @@ SParser.prototype = {
     list: list
 };
 
-module.exports = function SParse(stream) {
+export function SParse(stream) {
     var parser = new SParse.Parser(stream);
     var expression = parser.expr();
 
@@ -44,8 +42,9 @@ module.exports = function SParse(stream) {
     return expression;
 };
 
-module.exports.Parser = SParser;
-module.exports.SyntaxError = Error;
+export const Parser = SParser;
+SParse.Parser = Parser;
+export const SyntaxError = Error;
 
 function error(msg) {
     var e = new Error('Syntax error: ' + msg);
